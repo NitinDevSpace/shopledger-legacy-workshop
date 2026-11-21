@@ -102,7 +102,8 @@ router.post('/orders', function (req, res) {
     subtotal: totals.subtotal,
     discount: totals.discount,
     tax: totals.tax,
-    total: totals.total
+    total: totals.total,
+    invoiceLines: totals.lines
   });
 
   store.appendAudit(db, 'ORDER_CREATED', 'Order #' + order.id + ' (' + customerName + ') ₹' + order.total.toFixed(2));
